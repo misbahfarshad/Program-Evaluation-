@@ -140,6 +140,7 @@ summary(Alameda_Fuzzy_RD)
 
 #YOLO County: Sharp RD
 YOLO_Sharp_RD <- lm(evades_taxes_yn ~ high_tax_dummy, data = county_C) 
-summary(YOLO_Sharp_RD) 
-coeftest(YOLO_Sharp_RD, vcov. = sandwich)
-
+stargazer(YOLO_Sharp_RD, type = "text", title = "Sharp RD Results for Yolo County", 
+          dep.var.labels = "Tax Evasion (Yes/No)", 
+          covariate.labels = c("High Tax Rate (Dummy)"),
+          out = "sharp_rd_yolo_output.txt")
